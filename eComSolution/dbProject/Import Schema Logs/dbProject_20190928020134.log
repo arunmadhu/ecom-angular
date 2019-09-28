@@ -1,0 +1,77 @@
+29-09-2019 00:01:34	This log contains information about the import schema operation into project 'dbProject' on computer 'DESKTOP-ENMHLCC' by user 'arunf'.
+29-09-2019 00:01:34	Import of database schema has started.
+29-09-2019 00:01:38	Gathering database options
+29-09-2019 00:01:38	Gathering users
+29-09-2019 00:01:38	Gathering roles
+29-09-2019 00:01:38	Gathering application roles
+29-09-2019 00:01:38	Gathering role memberships
+29-09-2019 00:01:38	Gathering filegroups
+29-09-2019 00:01:38	Gathering full-text catalogs
+29-09-2019 00:01:38	Gathering assemblies
+29-09-2019 00:01:38	Gathering certificates
+29-09-2019 00:01:38	Gathering asymmetric keys
+29-09-2019 00:01:38	Gathering symmetric keys
+29-09-2019 00:01:38	Gathering encrypted symmetric keys
+29-09-2019 00:01:38	Gathering schemas
+29-09-2019 00:01:39	Gathering XML schema collections
+29-09-2019 00:01:39	Gathering user-defined data types
+29-09-2019 00:01:39	Gathering user-defined types
+29-09-2019 00:01:39	Gathering table types
+29-09-2019 00:01:39	Gathering unique keys for table types
+29-09-2019 00:01:39	Gathering primary keys for table types
+29-09-2019 00:01:39	Gathering indexes for table types
+29-09-2019 00:01:39	Gathering check constraints for table types
+29-09-2019 00:01:39	Gathering default constraints for table types
+29-09-2019 00:01:39	Gathering partition functions
+29-09-2019 00:01:39	Gathering partition schemes
+29-09-2019 00:01:39	Gathering functions
+29-09-2019 00:01:39	Gathering encrypted functions
+29-09-2019 00:01:39	Gathering aggregates
+29-09-2019 00:01:39	Gathering procedures
+29-09-2019 00:01:39	Gathering encrypted procedures
+29-09-2019 00:01:39	Gathering tables
+29-09-2019 00:01:39	Gathering primary keys
+29-09-2019 00:01:39	Gathering unique constraints
+29-09-2019 00:01:39	Gathering foreign keys
+29-09-2019 00:01:39	Gathering default constraints
+29-09-2019 00:01:39	Gathering check constraints
+29-09-2019 00:01:39	Gathering views
+29-09-2019 00:01:39	Gathering encrypted views
+29-09-2019 00:01:39	Gathering indexes
+29-09-2019 00:01:39	Gathering statistics
+29-09-2019 00:01:39	Gathering full-text index stoplists
+29-09-2019 00:01:39	Gathering search property lists
+29-09-2019 00:01:39	Gathering search properties
+29-09-2019 00:01:39	Gathering full-text indexes
+29-09-2019 00:01:39	Gathering column store indexes
+29-09-2019 00:01:39	Gathering spatial indexes
+29-09-2019 00:01:39	Gathering XML indexes
+29-09-2019 00:01:39	Gathering Selective XML indexes
+29-09-2019 00:01:39	Gathering encrypted triggers
+29-09-2019 00:01:39	Gathering triggers
+29-09-2019 00:01:39	Gathering encrypted and clr ddl triggers
+29-09-2019 00:01:39	Gathering ddl triggers
+29-09-2019 00:01:39	Gathering synonyms
+29-09-2019 00:01:39	Gathering defaults
+29-09-2019 00:01:39	Gathering data constraint uddt bindings
+29-09-2019 00:01:39	Gathering rules
+29-09-2019 00:01:39	Gathering data constraint uddt bindings
+29-09-2019 00:01:39	Gathering message types
+29-09-2019 00:01:39	Gathering queues
+29-09-2019 00:01:39	Gathering contracts
+29-09-2019 00:01:39	Gathering services
+29-09-2019 00:01:39	Gathering event notifications
+29-09-2019 00:01:39	Gathering remote service bindings
+29-09-2019 00:01:39	Gathering broker priorities
+29-09-2019 00:01:39	Gathering signatures
+29-09-2019 00:01:39	Gathering data compression options
+29-09-2019 00:01:39	Gathering sequence types
+29-09-2019 00:01:39	Gathering extended properties
+29-09-2019 00:01:39	Gathering credentials
+29-09-2019 00:01:39	Gathering logins
+29-09-2019 00:01:39	Gathering server audits
+29-09-2019 00:01:39	Scanning project for duplicate elements
+29-09-2019 00:01:39	Finished duplicate element processing
+29-09-2019 00:01:39	Finished importing database.
+29-09-2019 00:01:39	A summary of the import was saved to the following location: E:\tech related\git-repo\ecom-angular\eComSolution\dbProject\Import Schema Logs\dbProject_20190928020134.log
+29-09-2019 00:01:39	Click Finish to continue...

@@ -1,0 +1,27 @@
+<h2>User Login</h2>
+
+<form name="loginForm" (ngSubmit)="f.form.valid && onLogin()" #f="ngForm" novalidate>
+  <div class="wrapper" style="padding-top: 10px; padding-bottom: 10px; ">
+    <div class="row noMargin">
+      <div class="col-md-6" style="text-align:right;">
+        <span class="text-info">Please login to access your shopping cart</span>
+      </div>
+      </div>
+      <div class="row noMargin">
+        <div class="col-md-3" style="text-align:right;">
+          <label class="control-label"><b>User Email</b></label>
+        </div>
+        <div class="col-md-4">
+          <input class="form-control" name="userEmail" [(ngModel)]="userEmailText" #userEmail="ngModel" email required />
+        </div>
+        <div *ngIf="f.submitted && userEmail.invalid" class="col-md-4 text-danger">
+          <div *ngIf="userEmail.errors.required">User Email is required</div>
+          <div *ngIf="userEmail.errors.email">Invalid email</div>
+        </div>
+      </div>
+      <br />
+      <div>
+        <button class="btn btn-md btn-primary">Login</button>
+      </div>
+    </div>
+</form>

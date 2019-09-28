@@ -3,3 +3,5 @@
 ################################################################################
 
 /eComSolution/dbProject/obj/Debug
+/eComSolution/webapi/bin/Debug/netcoreapp2.1
+/eComSolution/webapi/obj

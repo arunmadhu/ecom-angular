@@ -1,0 +1,17 @@
+<h2>Product list</h2>
+
+<div *ngIf="flashMessage">
+  <span class="alert alert-info">{{flashMessage}}</span>
+</div>
+
+<div class="row">
+  <div class="col-sm-6" *ngFor="let item of products">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
+        <button class="btn btn-primary" (click) ="addToCart(item.id)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+li.icon {
+  list-style-image: url("/assets/img/shop-cart.png");
+  width: 100%;
+  margin-bottom: -0.1em;
+}

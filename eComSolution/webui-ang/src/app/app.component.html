@@ -1,0 +1,51 @@
+
+  <div class="content" role="main">
+    <div class="row noMargin">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">E-Commerce app</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/orders-list">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/cart">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/about">About</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <span *ngIf="loggedInUser" class="text-info"> {{loggedInUser}} </span>
+              <span *ngIf="!loggedInUser" class="text-info">
+                <a class="text-info" routerLink="/login">Login</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <br />
+    <br />
+    <div style="padding:15px 15px 15px 15px">
+      <router-outlet>
+
+      </router-outlet>
+    </div>
+    <footer>
+    </footer>
+  </div>
+<br />
+<br />
+
