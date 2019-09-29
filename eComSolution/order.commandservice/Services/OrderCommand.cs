@@ -11,7 +11,6 @@ namespace order.commandservice.Services
     public class OrderCommand : IOrderCommand
     {
         private readonly commandContext commandContext;
-
         public OrderCommand(commandContext _context)
         {
             commandContext = _context;

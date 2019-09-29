@@ -1,16 +1,18 @@
 {
   "ExpandedNodes": [
     "",
-    "\\order.commandservice\\Context",
-    "\\order.commandservice\\Models",
+    "\\order.commandservice",
+    "\\order.commandservice\\Services",
     "\\order.queryservices",
-    "\\unittests",
+    "\\order.queryservices\\Models",
+    "\\order.queryservices\\Services",
+    "\\webapi",
+    "\\webapi\\Utility",
     "\\webui-ang",
     "\\webui-ang\\src",
     "\\webui-ang\\src\\app",
-    "\\webui-ang\\src\\app\\cart",
     "\\webui-ang\\src\\app\\home"
   ],
-  "SelectedNode": "\\unittests\\OrderLogicTest.cs",
+  "SelectedNode": "\\unittests\\unittests.csproj",
   "PreviewInSolutionExplorer": false
 }
