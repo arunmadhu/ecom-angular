@@ -127,6 +127,7 @@ namespace webapi.Controllers
         /// </summary>
         /// <param name="id">cart id</param>
         [HttpDelete("{id}")]
+        [Route("deletecart/{id}")]
         public void Delete(int id)
         {
             commandService.DeleteCartById(id);

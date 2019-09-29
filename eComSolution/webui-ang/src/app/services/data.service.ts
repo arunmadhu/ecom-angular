@@ -38,7 +38,8 @@ export class DataService {
   }
 
   remove_cartItem(id: number) {
-    return this.httpClient.delete(this.baseUrl + '/' + id);
+    console.log(`${this.baseUrl}/deletecart/${id}`);
+    return this.httpClient.delete<void>(`${this.baseUrl}/deletecart/${id}`);
   }
 }
 

@@ -33,10 +33,19 @@ export class CartComponent implements OnInit {
 
   public removeItem(cartid) {
 
-    this.dataService.remove_cartItem(cartid);
+    //this.dataService.remove_cartItem(cartid);
 
-    let index = this.cartItems.findIndex(d => d.cartid === cartid);
-    this.cartItems.splice(index, 1);
+    this.dataService.remove_cartItem(cartid).subscribe(
+      () => {
+        let index = this.cartItems.findIndex(d => d.cartid === cartid);
+        this.cartItems.splice(index, 1);
+      },
+      response => {
+        console.log("POST call in error", response);
+        this.flashMessage = "Not able to update cart now. Please try later..";
+      },
+      () => {
+      });
   }
 
   public checkOut() {

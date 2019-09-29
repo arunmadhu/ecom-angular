@@ -1,18 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\order.commandservice",
-    "\\order.commandservice\\Services",
-    "\\order.queryservices",
-    "\\order.queryservices\\Models",
-    "\\order.queryservices\\Services",
     "\\webapi",
+    "\\webapi\\Controllers",
     "\\webapi\\Utility",
     "\\webui-ang",
     "\\webui-ang\\src",
     "\\webui-ang\\src\\app",
-    "\\webui-ang\\src\\app\\home"
+    "\\webui-ang\\src\\app\\cart",
+    "\\webui-ang\\src\\app\\order",
+    "\\webui-ang\\src\\app\\services"
   ],
-  "SelectedNode": "\\unittests\\unittests.csproj",
+  "SelectedNode": "\\webapi\\Controllers\\ecomController.cs",
   "PreviewInSolutionExplorer": false
 }
