@@ -1,0 +1,166 @@
+USE [master]
+GO
+/****** Object:  Database [eCom]    Script Date: 30-09-2019 00:33:01 ******/
+CREATE DATABASE [eCom]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'eCom', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\eCom.mdf' , SIZE = 3264KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'eCom_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\eCom_log.ldf' , SIZE = 816KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [eCom] SET COMPATIBILITY_LEVEL = 120
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [eCom].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [eCom] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [eCom] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [eCom] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [eCom] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [eCom] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [eCom] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [eCom] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [eCom] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [eCom] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [eCom] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [eCom] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [eCom] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [eCom] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [eCom] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [eCom] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [eCom] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [eCom] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [eCom] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [eCom] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [eCom] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [eCom] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [eCom] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [eCom] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [eCom] SET  MULTI_USER 
+GO
+ALTER DATABASE [eCom] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [eCom] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [eCom] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [eCom] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+ALTER DATABASE [eCom] SET DELAYED_DURABILITY = DISABLED 
+GO
+USE [eCom]
+GO
+/****** Object:  Table [dbo].[Cart]    Script Date: 30-09-2019 00:33:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cart](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [nvarchar](50) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[Price] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Order]    Script Date: 30-09-2019 00:33:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Order](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[OrderNumber] [nvarchar](50) NOT NULL,
+	[TotalItemCost] [int] NOT NULL,
+	[DeliveryCost] [int] NOT NULL,
+	[Status] [nvarchar](50) NOT NULL,
+	[UserId] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Product]    Script Date: 30-09-2019 00:33:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Product](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Description ] [text] NOT NULL,
+	[Category] [nchar](30) NOT NULL,
+	[UnitPrice] [int] NOT NULL,
+	[Manufacturer] [nvarchar](50) NULL,
+	[InStock] [int] NOT NULL,
+	[StarRating] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET IDENTITY_INSERT [dbo].[Product] ON 
+
+GO
+INSERT [dbo].[Product] ([Id], [Name], [Description ], [Category], [UnitPrice], [Manufacturer], [InStock], [StarRating]) VALUES (1, N'Dell inspirion laptop', N'Dell inspirion series laptop', N'Electronics-laptop            ', 1800, N'Dell', 100, 5)
+GO
+INSERT [dbo].[Product] ([Id], [Name], [Description ], [Category], [UnitPrice], [Manufacturer], [InStock], [StarRating]) VALUES (2, N'Xiomi Poco F1', N'Xiomi mobile Poco Series', N'Electronics-mobile            ', 800, N'Xiomi', 150, 4)
+GO
+INSERT [dbo].[Product] ([Id], [Name], [Description ], [Category], [UnitPrice], [Manufacturer], [InStock], [StarRating]) VALUES (4, N'Hp Pavilio laptop', N'Hp laptop series with SSD support', N'Electonics-laptoi             ', 1500, N'Hp', 180, 4)
+GO
+INSERT [dbo].[Product] ([Id], [Name], [Description ], [Category], [UnitPrice], [Manufacturer], [InStock], [StarRating]) VALUES (5, N'iPhone Xs', N'iPhone latest series ', N'Electronics-mobile            ', 2000, N'Apple', 50, 5)
+GO
+INSERT [dbo].[Product] ([Id], [Name], [Description ], [Category], [UnitPrice], [Manufacturer], [InStock], [StarRating]) VALUES (6, N'Sony Bravia LED', N'Sonia Bravia series led TV', N'Electronics-TV                ', 1500, N'Sony', 200, 5)
+GO
+INSERT [dbo].[Product] ([Id], [Name], [Description ], [Category], [UnitPrice], [Manufacturer], [InStock], [StarRating]) VALUES (7, N'Samsung LevelU', N'Samsung bluetooth headset', N'Electronics-bluetooth         ', 100, N'Samsung', 350, 4)
+GO
+INSERT [dbo].[Product] ([Id], [Name], [Description ], [Category], [UnitPrice], [Manufacturer], [InStock], [StarRating]) VALUES (8, N'Dell wireless mouse', N'Wireless mouse for laptops', N'Electronics-accessories         ', 20, N'Dell', 500, 4)
+GO
+INSERT [dbo].[Product] ([Id], [Name], [Description ], [Category], [UnitPrice], [Manufacturer], [InStock], [StarRating]) VALUES (9, N'Mobile Protection Cover', N'Mobile covers for protection', N'Electronics-accessories         ', 10, N'Samsung', 350, 4)
+GO
+SET IDENTITY_INSERT [dbo].[Product] OFF
+GO
+ALTER TABLE [dbo].[Cart]  WITH CHECK ADD  CONSTRAINT [FK_Cart_ToTable] FOREIGN KEY([ProductId])
+REFERENCES [dbo].[Product] ([Id])
+GO
+ALTER TABLE [dbo].[Cart] CHECK CONSTRAINT [FK_Cart_ToTable]
+GO
+USE [master]
+GO
+ALTER DATABASE [eCom] SET  READ_WRITE 
+GO
