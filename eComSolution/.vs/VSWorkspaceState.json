@@ -1,11 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\webui-ang\\src\\app",
-    "\\webui-ang\\src\\app\\cart",
-    "\\webui-ang\\src\\app\\order",
-    "\\webui-ang\\src\\assets",
-    "\\webui-ang\\src\\environments"
+    "\\order.commandservice",
+    "\\order.queryservices",
+    "\\unittests",
+    "\\webapi",
+    "\\webapi\\Controllers",
+    "\\webapi\\Profile",
+    "\\webapi\\Utility",
+    "\\webui-ang",
+    "\\webui-ang\\src"
   ],
+  "SelectedNode": "\\unittests\\unittests.csproj",
   "PreviewInSolutionExplorer": false
 }

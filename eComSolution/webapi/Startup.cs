@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Text;
-using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using order.commandservice.Context;
+using order.commandservice.Services;
+using order.queryservices.Context;
+using order.queryservices.Services;
 
 namespace webapi
 {
@@ -43,6 +44,26 @@ namespace webapi
                                        builder.AllowCredentials();
                                    });
 
+            });
+
+            services.AddDbContext<queryContext>(options =>
+          options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+              );
+
+            services.AddDbContext<commandContext>(options =>
+           options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+             );
+
+            services.AddTransient<IOrderQuery, OrderQuery>();
+            services.AddTransient<IOrderCommand, OrderCommand>();
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddLogging(lb =>
+            {
+                lb.AddConfiguration(Configuration.GetSection("Logging"));
+                lb.AddConsole();
+                lb.AddEventSourceLogger();
             });
         }
 

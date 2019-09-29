@@ -5,3 +5,10 @@
 /eComSolution/dbProject/obj/Debug
 /eComSolution/webapi/bin/Debug/netcoreapp2.1
 /eComSolution/webapi/obj
+/eComSolution/dbProject/bin/Debug
+/eComSolution/order.commandservice/obj
+/eComSolution/order.commandservice/bin/Debug/netstandard2.0
+/eComSolution/order.queryservices/obj
+/eComSolution/order.queryservices/bin/Debug/netstandard2.0
+/eComSolution/unittests/obj
+/eComSolution/unittests/bin/Debug/netcoreapp2.1
