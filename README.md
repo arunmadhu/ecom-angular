@@ -25,5 +25,5 @@ The solution folder contains below folders.
    The unit test project is added here. The unit test covers all the necessary code sections.
    
  * dbProject
-    This folder contains the db project being used in this applicaiton. The DB scripts and product data can be found in the Database folder     in githib repository root.  
+    This folder contains the db project being used in this applicaiton. The DB scripts and product data can be found in the db-scripts file     in githib repository root.  
   
