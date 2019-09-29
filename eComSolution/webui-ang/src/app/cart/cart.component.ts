@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { DataService } from 'src/app/services/data.service';
 import { UserService } from 'src/app/services/user.service';
+import { Order } from '../models/product';
 
 @Component({
   selector: 'app-cart',
@@ -22,16 +23,8 @@ export class CartComponent implements OnInit {
       });
     } else {
       this.dataService.get_cart(this.loggedInUser).subscribe((res: any[]) => {
-        console.log(res);
-
-        this.cartItems = [
-          { cartid: 1, productid: 1, productname: 'dell inspirion laptop', quatity: 2, price:3000},
-          { cartid: 1, productid: 1, productname: 'Hp Pavilio laptop', quatity: 1, price:1200},
-          { cartid: 1, productid: 1, productname: 'Mac air', quatity: 1, price:2100},
-          { cartid: 1, productid: 1, productname: 'OnePlus mobile', quatity: 3, price: 3600}
-        ];
+        this.cartItems = res;
       });
-
     }
   }
 
@@ -39,16 +32,15 @@ export class CartComponent implements OnInit {
   }
 
   public removeItem(cartid) {
-    console.log(this.loggedInUser + ' removed cart item no: ' + cartid);
+
+    this.dataService.remove_cartItem(cartid);
 
     let index = this.cartItems.findIndex(d => d.cartid === cartid);
     this.cartItems.splice(index, 1);
-
   }
 
   public checkOut() {
     this.router.navigateByUrl(`/orders`).then((e) => {
     });
-    console.log(this.loggedInUser + 'checking out the cart');
   }
 }

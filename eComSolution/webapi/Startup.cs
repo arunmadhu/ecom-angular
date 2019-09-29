@@ -15,6 +15,7 @@ using order.commandservice.Context;
 using order.commandservice.Services;
 using order.queryservices.Context;
 using order.queryservices.Services;
+using webapi.Utility;
 
 namespace webapi
 {
@@ -56,6 +57,7 @@ namespace webapi
 
             services.AddTransient<IOrderQuery, OrderQuery>();
             services.AddTransient<IOrderCommand, OrderCommand>();
+            services.AddTransient<IOrderLogic, OrderLogic>();
 
             services.AddAutoMapper(typeof(Startup));
 

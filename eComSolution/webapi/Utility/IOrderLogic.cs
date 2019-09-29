@@ -1,10 +1,9 @@
-﻿using order.commandservice.Models;
+﻿using webapi.Models;
 
 namespace webapi.Utility
 {
     public interface IOrderLogic
     {
-        Order CalcualteOrderDetails(string UserId);
-        string GenerateOrderNumber(string UserId);
+        OrderModel IntiateOrderCreation(string UserId);
     }
 }

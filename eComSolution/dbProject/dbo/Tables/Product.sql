@@ -6,7 +6,9 @@
     [UnitPrice]    INT           NOT NULL,
     [Manufacturer] NVARCHAR (50) NULL,
     [InStock]      INT           NOT NULL,
-    [StartRating]  INT           NOT NULL,
+    [StarRating]   INT           NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+
 

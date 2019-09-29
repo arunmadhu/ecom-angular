@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 
 export class OrderListComponent implements OnInit {
   loggedInUser: string;
+  orders: any[];
 
    ngOnInit(): void {
     }
@@ -20,6 +21,10 @@ export class OrderListComponent implements OnInit {
 
     if (this.loggedInUser == '') {
       this.router.navigateByUrl(`/login`).then((e) => {
+      });
+    } else {
+      this.dataService.get_orders(this.loggedInUser).subscribe((res: any[]) => {
+        this.orders = res;
       });
     }
   }

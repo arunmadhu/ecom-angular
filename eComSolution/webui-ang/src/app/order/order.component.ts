@@ -12,27 +12,21 @@ import { Order } from 'src/app/models/product';
 export class OrderComponent implements OnInit {
   loggedInUser: string;
   flashMessage: string;
-  orderItems: any[];
-  orderNumber: string;
+  newOrder: any[];
+  orderCreated: boolean;
 
   constructor(private user: UserService, private dataService: DataService, private router: Router) {
 
     this.user.currentUser.subscribe(us => this.loggedInUser = us);
+    this.orderCreated = false;
 
     if (this.loggedInUser == '') {
       this.router.navigateByUrl(`/login`).then((e) => {
       });
     } else {
-
-      this.dataService.get_order(this.loggedInUser).subscribe((res: any[]) => {
+      this.dataService.prepare_order(this.loggedInUser).subscribe((res: any[]) => {
         console.log(res);
-
-        this.orderItems = [
-          { cartid: 1, productid: 1, productname: 'dell inspirion laptop', quatity: 2, price: 3000 },
-          { cartid: 1, productid: 1, productname: 'Hp Pavilio laptop', quatity: 1, price: 1200 },
-          { cartid: 1, productid: 1, productname: 'Mac air', quatity: 1, price: 2100 },
-          { cartid: 1, productid: 1, productname: 'OnePlus mobile', quatity: 3, price: 3600 }
-        ];
+        this.newOrder = res;
       });
     }
   }
@@ -42,24 +36,20 @@ export class OrderComponent implements OnInit {
 
   public placeOrder() {
 
-    var model = new Order();
-    model.totalPrice = 3500;
+   var data = new Order();
+    data.userId = this.loggedInUser;
 
-    this.flashMessage = "Updating your cart..";
-
-    this.dataService.place_order(model).subscribe(
+    this.dataService.place_order(this.newOrder).subscribe(
       (val) => {
-        console.log("POST call successful value returned in body", val);
-        this.flashMessage = "Order submitted.";
-
-        this.orderNumber = JSON.parse(JSON.stringify(val)).orderNumber;
+        this.flashMessage = "Order submitted."
+        this.orderCreated = true;
       },
       response => {
         console.log("POST call in error", response);
+        this.orderCreated = true;
         this.flashMessage = "Not able to update cart now. Please try later..";
       },
       () => {
-        console.log("The POST observable is now completed.");
       }
     );
 

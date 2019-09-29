@@ -8,9 +8,10 @@
   <div class="col-sm-6" *ngFor="let item of products">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{item.name}}</h5>
+        <h5 class="card-title">{{item.name}} -- {{item.manufaturer}} -- {{item.rating}} star*</h5>
         <p class="card-text">{{item.description}}</p>
-        <button class="btn btn-primary" (click) ="addToCart(item.id)">Add to Cart</button>
+        <p class="card-text">Price: ${{item.unitPrice}}. Stock quantity: {{item.stockQuantity}}</p>
+        <button class="btn btn-primary" (click)="addToCart(item.productId,item.unitPrice)">Add to Cart</button>
       </div>
     </div>
   </div>

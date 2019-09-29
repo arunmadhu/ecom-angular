@@ -4,10 +4,10 @@
   <span class="alert alert-info">{{flashMessage}}</span>
 </div>
 
-<div *ngIf="!orderNumber">
+<div *ngIf="!orderCreated">
   <div class="row">
     <div class="col-md-8">
-      <table class='table' *ngIf="orderItems">
+      <table class='table'>
         <thead>
           <tr>
             <th>Product Name</th>
@@ -15,21 +15,37 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of orderItems ">
-            <td>{{ item.productname }}</td>
+          <tr *ngFor="let item of newOrder.items ">
+            <td>{{ item.productName }}</td>
             <td>{{ item.price }}</td>
+          </tr>
+          <tr>
+            <td style="text-align:right">
+              Item Price:
+            </td>
+            <td>
+              {{newOrder.totalPrice}}
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:right;">
+              Delivery charges:
+            </td>
+            <td>
+              {{newOrder.deliveryCost}}
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:right">
+              Total amount to be paid:
+            </td>
+            <td>
+              {{newOrder.totalPrice + newOrder.deliveryCost}}
+            </td>
           </tr>
         </tbody>
       </table>
       <br />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Total Price: </h5>
-        <p class="card-text">$3500</p>
-      </div>
     </div>
   </div>
   <div class="row">
@@ -39,9 +55,9 @@
   </div>
 </div>
 
-<div *ngIf="orderNumber">
+<div *ngIf="orderCreated">
   <br />
   <p>Your order has been submitted successfully in the system. Below are the order details.</p>
-  {{orderNumber}}
+  {{newOrder.orderNumber}}
 </div>
 

@@ -21,16 +21,24 @@ export class DataService {
     return this.httpClient.get(this.baseUrl + '/cart/' + userid);
   }
 
-  get_order(userid) {
-    return this.httpClient.get(this.baseUrl + '/cart/' + userid);
+  get_orders(userid) {
+    return this.httpClient.get(this.baseUrl + '/orders/' + userid);
+  }
+
+  prepare_order(userid) {
+    return this.httpClient.get(this.baseUrl + '/prepareorder/' + userid);
   }
 
   update_cart(cart: Cart): Observable<number> {
     return this.httpClient.post<number>(this.baseUrl + '/cart', cart);
   }
 
-  place_order(order: Order): Observable<string> {
-    return this.httpClient.post<string>(this.baseUrl + '/order', order);
+  place_order(data: any[]): Observable<string> {
+    return this.httpClient.post<string>(this.baseUrl + '/order', data);
+  }
+
+  remove_cartItem(id: number) {
+    return this.httpClient.delete(this.baseUrl + '/' + id);
   }
 }
 

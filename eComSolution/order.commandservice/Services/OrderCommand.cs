@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace order.commandservice.Services
 {
+    /// <summary>
+    /// Order commands implementation 
+    /// </summary>
     public class OrderCommand : IOrderCommand
     {
         private readonly commandContext commandContext;
@@ -15,7 +18,7 @@ namespace order.commandservice.Services
         }
         public void SaveCart(Cart item)
         {
-            commandContext.Cart.Add(item);
+            commandContext.Cart.Update(item);
             commandContext.SaveChanges();
         }
 

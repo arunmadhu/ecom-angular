@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using order.queryservices.Context;
 using order.queryservices.Models;
 
 namespace order.queryservices.Services
 {
+    /// <summary>
+    /// Query implementation for the DB context
+    /// </summary>
     public class OrderQuery : IOrderQuery
     {
         private readonly queryContext queryContext;
@@ -21,7 +25,7 @@ namespace order.queryservices.Services
 
         public IQueryable<Cart> GetCartByUserId(string userId)
         {
-            return queryContext.Cart.Where(c => c.UserId == userId);
+            return queryContext.Cart.Include(c => c.Product).Where(c => c.UserId == userId);
         }
 
         public IQueryable<Order> GetOrderByUserId(string userId)
