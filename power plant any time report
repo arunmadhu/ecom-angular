@@ -1,0 +1,50 @@
+<mxfile host="app.diagrams.net" modified="2024-03-16T02:25:39.352Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="oegfnjMCC4-e-h4hS-o0" version="24.0.7" type="github" pages="2">
+  <diagram name="Main Blocks" id="n_KYYv9BIPD_4SMAWJG3">
+    <mxGraphModel dx="1434" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Gm6mC0jStOQM7_BD0a0v-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gm6mC0jStOQM7_BD0a0v-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gm6mC0jStOQM7_BD0a0v-1" value="Chat Interface" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gm6mC0jStOQM7_BD0a0v-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Gm6mC0jStOQM7_BD0a0v-2" target="Gm6mC0jStOQM7_BD0a0v-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gm6mC0jStOQM7_BD0a0v-2" value="Data Source" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gm6mC0jStOQM7_BD0a0v-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gm6mC0jStOQM7_BD0a0v-3" target="Gm6mC0jStOQM7_BD0a0v-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gm6mC0jStOQM7_BD0a0v-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gm6mC0jStOQM7_BD0a0v-3" target="Gm6mC0jStOQM7_BD0a0v-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gm6mC0jStOQM7_BD0a0v-3" value="Dynamic Report Generator" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Aj9NmpLaTgbYOVcnJx_2" name="Detailed">
+    <mxGraphModel dx="1434" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2WwxI37rM4jiReeMQKq--1" value="User Interface" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="70" width="140" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="2WwxI37rM4jiReeMQKq--2" value="website / mobile app" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2WwxI37rM4jiReeMQKq--1">
+          <mxGeometry y="40" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2WwxI37rM4jiReeMQKq--3" value="Chat interface" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2WwxI37rM4jiReeMQKq--1">
+          <mxGeometry x="20" y="78" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
