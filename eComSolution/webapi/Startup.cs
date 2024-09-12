@@ -23,7 +23,7 @@ namespace webapi
     {
         private readonly ILogger<Startup> logger;
         public IConfiguration Configuration { get; }
-
+    //Comment added by sundar
         public Startup(IConfiguration _configuration, ILogger<Startup> _logger)
         {
             Configuration = _configuration;
